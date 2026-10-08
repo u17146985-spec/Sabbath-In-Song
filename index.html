@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sabbath in Song 2027 — Music for a Greater Purpose. A special Sabbath experience of worship, music and fellowship.">
+  <title>Sabbath in Song 2027</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <a class="brand" href="#home">
+    <span class="brand-mark">♪</span>
+    <span>SABBATH <b>IN SONG</b></span>
+  </a>
+  <button class="menu-toggle" aria-label="Open menu">☰</button>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#programme">Programme</a>
+    <a href="#artists">Artists</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#register" class="nav-button">Register</a>
+  </div>
+</nav>
+
+<header id="home" class="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="eyebrow">SABBATH IN SONG • 2027</div>
+    <h1>Music for a<br><span>Greater Purpose</span></h1>
+    <p>A Sabbath experience where worship, music and fellowship come together.</p>
+    <div class="hero-buttons">
+      <a class="button primary" href="#register">Register Now</a>
+      <a class="button outline" href="#about">Discover More</a>
+    </div>
+  </div>
+</header>
+
+<section class="intro" id="about">
+  <div class="section-label">WELCOME</div>
+  <h2>A Sabbath Filled With <span>Purpose</span></h2>
+  <p class="lead">
+    Sabbath in Song is a worship-focused musical experience designed to bring
+    people together through sacred music, fellowship and a renewed focus on God.
+  </p>
+  <div class="cards">
+    <article class="card"><div class="icon">♪</div><h3>Worship</h3><p>Lift your heart through meaningful sacred music and praise.</p></article>
+    <article class="card"><div class="icon">✦</div><h3>Inspiration</h3><p>Be encouraged through messages, testimonies and music.</p></article>
+    <article class="card"><div class="icon">♡</div><h3>Fellowship</h3><p>Connect with fellow believers in a warm Sabbath atmosphere.</p></article>
+  </div>
+</section>
+
+<section class="blue-section" id="programme">
+  <div class="section-label light">THE DAY</div>
+  <h2>Programme</h2>
+  <p class="lead light-text">More programme details will be announced soon.</p>
+  <div class="timeline">
+    <div class="timeline-item"><span>01</span><div><h3>Opening Worship</h3><p>Begin the Sabbath experience with prayer and praise.</p></div></div>
+    <div class="timeline-item"><span>02</span><div><h3>Musical Ministry</h3><p>Experience uplifting performances and congregational singing.</p></div></div>
+    <div class="timeline-item"><span>03</span><div><h3>Word &amp; Inspiration</h3><p>A meaningful message centred on faith and purpose.</p></div></div>
+    <div class="timeline-item"><span>04</span><div><h3>Closing Celebration</h3><p>End the day with gratitude, fellowship and song.</p></div></div>
+  </div>
+</section>
+
+<section id="artists" class="artists">
+  <div class="section-label">MUSICAL MINISTRY</div>
+  <h2>Featured Artists</h2>
+  <p class="lead">Artist announcements coming soon.</p>
+  <div class="artist-grid">
+    <div class="artist-placeholder"><span>♪</span><h3>Artist / Group</h3><p>Coming Soon</p></div>
+    <div class="artist-placeholder"><span>♫</span><h3>Artist / Group</h3><p>Coming Soon</p></div>
+    <div class="artist-placeholder"><span>♬</span><h3>Artist / Group</h3><p>Coming Soon</p></div>
+  </div>
+</section>
+
+<section class="quote-section">
+  <div class="quote-mark">“</div>
+  <blockquote>Let everything that has breath praise the Lord.</blockquote>
+  <p>Psalm 150:6</p>
+</section>
+
+<section id="gallery" class="gallery">
+  <div class="section-label">MEMORIES</div>
+  <h2>Gallery</h2>
+  <p class="lead">Photos from Sabbath in Song will appear here.</p>
+  <div class="gallery-grid">
+    <div class="gallery-box">PHOTO 01</div>
+    <div class="gallery-box">PHOTO 02</div>
+    <div class="gallery-box">PHOTO 03</div>
+    <div class="gallery-box">PHOTO 04</div>
+    <div class="gallery-box">PHOTO 05</div>
+    <div class="gallery-box">PHOTO 06</div>
+  </div>
+</section>
+
+<section id="register" class="register">
+  <div class="register-box">
+    <div class="section-label light">JOIN US</div>
+    <h2>Be Part of Sabbath in Song 2027</h2>
+    <p>Registration information will be announced here. You can replace this button with your Google Form registration link.</p>
+    <a class="button white" href="mailto:sabbathinsongg@gmail.com?subject=Sabbath%20in%20Song%202027%20Registration">Register / Enquire</a>
+  </div>
+</section>
+
+<section class="contact">
+  <div>
+    <div class="section-label">GET IN TOUCH</div>
+    <h2>Let's Connect</h2>
+    <p>For enquiries, partnerships and participation:</p>
+  </div>
+  <div class="contact-details">
+    <a href="mailto:sabbathinsongg@gmail.com">✉ sabbathinsongg@gmail.com</a>
+    <a href="tel:+27814799675">☎ +27 81 479 9675</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand">SABBATH <b>IN SONG</b></div>
+  <p>Music for a Greater Purpose</p>
+  <p class="copyright">© 2027 Sabbath in Song. All rights reserved.</p>
+</footer>
+
+<script>
+  const toggle = document.querySelector('.menu-toggle');
+  const links = document.querySelector('.nav-links');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+  document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+</script>
+</body>
+</html>
