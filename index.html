@@ -1,227 +1,431 @@
+
 <!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<html lang="en"> <head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Home | Sabbath in Song 2027</title>
+  <meta name="description" content="Join Sabbath in Song 2027 on 6 March 2027 for a sacred musical experience. Music for a Greater Purpose.">
 
-<title>Home | Sabbath in Song 2027</title>
+  <link rel="stylesheet" href="style.css">
 
-<link rel="stylesheet" href="style.css">
+  <style>
+    .site-logo {
+      height: 64px;
+      width: auto;
+      max-width: 280px;
+      display: block;
+      object-fit: contain;
+    }
 
-<style> .site-logo { height: 64px; width: auto; display: block; object-fit: contain; } .nav .logo { display: flex; align-items: center; } </style>
+    .nav .logo {
+      display: flex;
+      align-items: center;
+    }
 
+    /* LIVE COUNTDOWN */
+    .countdown-section {
+      padding: 75px 6%;
+      text-align: center;
+      background: linear-gradient(180deg, #f5faff, #ffffff);
+      border-bottom: 1px solid #dce7f0;
+    }
+
+    .countdown-label {
+      color: #1268ad;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      margin-bottom: 14px;
+    }
+
+    .countdown-section h2 {
+      color: #071f3b;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(32px, 5vw, 48px);
+      line-height: 1.15;
+      margin: 0 0 12px;
+    }
+
+    .countdown-date {
+      color: #66788b;
+      font-size: 14px;
+      margin: 0 0 30px;
+    }
+
+    .countdown-timer {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .countdown-box {
+      width: 112px;
+      min-height: 110px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #071f3b;
+      color: #ffffff;
+      border: 1px solid #174a78;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px #071f3b14;
+    }
+
+    .countdown-box span {
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 1.2;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .countdown-box small {
+      color: #9ddcff;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-top: 8px;
+    }
+
+    .countdown-message {
+      color: #1268ad;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin: 28px 0 0;
+    }
+
+    @media (max-width: 500px) {
+      .site-logo {
+        height: 55px;
+        max-width: 200px;
+      }
+
+      .countdown-section {
+        padding: 55px 5%;
+      }
+
+      .countdown-timer {
+        gap: 9px;
+      }
+
+      .countdown-box {
+        width: calc(50% - 9px);
+        max-width: 145px;
+        min-height: 95px;
+      }
+
+      .countdown-box span {
+        font-size: 32px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
+  <!-- NAVIGATION -->
+  <nav class="nav">
 
-<nav class="nav">
-
-<a class="logo" href="index.html">
-  <img
-    src="sabbath-in-song-logo.jpg.jpeg"
-    alt="Sabbath in Song"
-    class="site-logo"
-  >
-</a>
-
-<button class="menu" onclick="document.querySelector('.links').classList.toggle('open')">
-  ☰
-</button>
-
-<div class="links">
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="programme.html">Programme</a>
-  <a href="artists.html">Artists</a>
-  <a href="gallery.html">Gallery</a>
-  <a class="cta" href="register.html">Register</a>
-</div>
-
-</nav>
-
-<!-- HERO -->
-
-<header class="hero">
-
-<div class="hero-overlay"></div>
-
-<div class="hero-inner">
-
-  <div class="tag">
-    SABBATH IN SONG • 2027
-  </div>
-
-  <h1>
-    Music for a<br>
-    <span>Greater Purpose</span>
-  </h1>
-
-  <p class="hero-subtitle">
-    Where Music Becomes Ministry
-  </p>
-
-  <p class="hero-description">
-    A sacred musical experience bringing worship, inspiration,
-    fellowship and the power of music together.
-  </p>
-
-  <div class="hero-verse">
-    “Let everything that has breath praise the Lord.”
-    <span>Psalm 150:6</span>
-  </div>
-
-  <div class="buttons">
-
-    <a class="btn btn-white" href="register.html">
-      Be Part of Sabbath in Song 2027
+    <a class="logo" href="index.html">
+      <img
+        src="sabbath-in-song-logo.jpg.jpeg"
+        alt="Sabbath in Song"
+        class="site-logo"
+      >
     </a>
 
-    <a class="btn btn-outline" href="about.html">
-      Discover More
+    <button
+      class="menu"
+      type="button"
+      aria-label="Toggle navigation menu"
+      onclick="document.querySelector('.links').classList.toggle('open')"
+    >
+      ☰
+    </button>
+
+    <div class="links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="programme.html">Programme</a>
+      <a href="artists.html">Artists</a>
+      <a href="gallery.html">Gallery</a>
+      <a class="cta" href="register.html">Register</a>
+    </div>
+
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-inner">
+
+      <div class="tag">
+        SABBATH IN SONG • 2027
+      </div>
+
+      <h1>
+        Music for a<br>
+        <span>Greater Purpose</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Where Music Becomes Ministry
+      </p>
+
+      <p class="hero-description">
+        A sacred musical experience bringing worship, inspiration,
+        fellowship and the power of music together.
+      </p>
+
+      <div class="hero-verse">
+        “Let everything that has breath praise the Lord.”
+        <span>Psalm 150:6</span>
+      </div>
+
+      <div class="buttons">
+
+        <a class="btn btn-white" href="register.html">
+          Be Part of Sabbath in Song 2027
+        </a>
+
+        <a class="btn btn-outline" href="about.html">
+          Discover More
+        </a>
+
+      </div>
+
+      <div class="coming-soon">
+        <span></span>
+        Something Special Is Coming
+        <span></span>
+      </div>
+
+    </div>
+
+  </header>
+
+  <!-- LIVE COUNTDOWN -->
+  <section class="countdown-section" aria-labelledby="countdown-heading">
+
+    <div class="countdown-label">
+      SAVE THE DATE
+    </div>
+
+    <h2 id="countdown-heading">
+      Counting Down to a Greater Purpose
+    </h2>
+
+    <p class="countdown-date">
+      Saturday, 6 March 2027
+    </p>
+
+    <div
+      class="countdown-timer"
+      id="countdown"
+      role="timer"
+      aria-label="Countdown to Sabbath in Song 2027"
+    >
+
+      <div class="countdown-box">
+        <span id="days">---</span>
+        <small>Days</small>
+      </div>
+
+      <div class="countdown-box">
+        <span id="hours">--</span>
+        <small>Hours</small>
+      </div>
+
+      <div class="countdown-box">
+        <span id="minutes">--</span>
+        <small>Minutes</small>
+      </div>
+
+      <div class="countdown-box">
+        <span id="seconds">--</span>
+        <small>Seconds</small>
+      </div>
+
+    </div>
+
+    <p class="countdown-message">
+      Music for a Greater Purpose · Psalm 150:6
+    </p>
+
+  </section>
+
+  <!-- WELCOME SECTION -->
+  <section class="section center">
+
+    <div class="label">
+      WELCOME
+    </div>
+
+    <h2 class="title">
+      Where Music Becomes Ministry
+    </h2>
+
+    <p class="lead">
+      Sabbath in Song is a special Sabbath experience created to glorify God
+      through sacred music, worship, fellowship and meaningful moments.
+    </p>
+
+    <div class="cards">
+
+      <article class="card">
+        <div class="card-icon">♪</div>
+        <h3>Worship</h3>
+        <p>
+          Lift your heart through sacred music and collective praise.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">✦</div>
+        <h3>Inspiration</h3>
+        <p>
+          Be encouraged through music, testimonies and the Word.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">♡</div>
+        <h3>Fellowship</h3>
+        <p>
+          Connect, celebrate and share a memorable Sabbath together.
+        </p>
+      </article>
+
+    </div>
+
+  </section>
+
+  <!-- 2027 EXPERIENCE -->
+  <section class="blue center">
+
+    <div class="label light">
+      2027 EXPERIENCE
+    </div>
+
+    <h2 class="title">
+      Something Special Is Coming
+    </h2>
+
+    <p class="lead">
+      Join us on 6 March 2027. Keep checking this page for venue,
+      programme and participation updates.
+    </p>
+
+    <a class="btn btn-white" href="programme.html">
+      View Programme
     </a>
 
-  </div>
+  </section>
 
-  <div class="coming-soon">
-    <span></span>
-    Something Special Is Coming
-    <span></span>
-  </div>
+  <!-- BIBLE VERSE -->
+  <section class="quote">
 
-</div>
+    <div class="quote-mark">
+      “
+    </div>
 
-</header>
+    <blockquote>
+      Let everything that has breath praise the Lord.
+    </blockquote>
 
-<!-- WELCOME SECTION -->
+    <cite>
+      Psalm 150:6
+    </cite>
 
-<section class="section center">
+  </section>
 
-<div class="label">
-  WELCOME
-</div>
+  <!-- REGISTRATION -->
+  <section class="register">
 
-<h2 class="title">
-  Where Music Becomes Ministry
-</h2>
+    <div class="section">
 
-<p class="lead">
-  Sabbath in Song is a special Sabbath experience created to glorify God
-  through sacred music, worship, fellowship and meaningful moments.
-</p>
+      <div class="label light">
+        JOIN US
+      </div>
 
-<div class="cards">
+      <h2 class="title">
+        Be Part of Sabbath in Song 2027
+      </h2>
 
-  <article class="card">
-    <div class="card-icon">♪</div>
-    <h3>Worship</h3>
-    <p>
-      Lift your heart through sacred music and collective praise.
+      <p class="lead">
+        Registration and participation information will be available here.
+      </p>
+
+      <a class="btn" href="register.html">
+        Registration &amp; Enquiries
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="footer-logo">
+      SABBATH IN SONG
+    </div>
+
+    <p class="motto">
+      Music for a Greater Purpose
     </p>
-  </article>
 
-  <article class="card">
-    <div class="card-icon">✦</div>
-    <h3>Inspiration</h3>
-    <p>
-      Be encouraged through music, testimonies and the Word.
+    <p class="copy">
+      © 2027 Sabbath in Song. All rights reserved.
     </p>
-  </article>
 
-  <article class="card">
-    <div class="card-icon">♡</div>
-    <h3>Fellowship</h3>
-    <p>
-      Connect, celebrate and share a memorable Sabbath together.
-    </p>
-  </article>
+  </footer>
 
-</div>
+  <!-- COUNTDOWN SCRIPT -->
+  <script>
+    (function () {
+      // 6 March 2027 at midnight in South Africa (UTC+02:00)
+      const eventDate = new Date("2027-03-06T00:00:00+02:00").getTime();
 
-</section>
+      const daysElement = document.getElementById("days");
+      const hoursElement = document.getElementById("hours");
+      const minutesElement = document.getElementById("minutes");
+      const secondsElement = document.getElementById("seconds");
+      const countdownElement = document.getElementById("countdown");
 
-<!-- 2027 EXPERIENCE -->
+      function updateCountdown() {
+        const now = Date.now();
+        const difference = eventDate - now;
 
-<section class="blue center">
+        if (difference <= 0) {
+          countdownElement.innerHTML =
+            '<p class="countdown-message">Sabbath in Song 2027 is here! Let everything that has breath praise the Lord.</p>';
+          return;
+        }
 
-<div class="label light">
-  2027 EXPERIENCE
-</div>
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((difference / (1000 * 60)) % 60);
+        const seconds = Math.floor((difference / 1000) % 60);
 
-<h2 class="title">
-  Something Special Is Coming
-</h2>
+        daysElement.textContent = String(days).padStart(3, "0");
+        hoursElement.textContent = String(hours).padStart(2, "0");
+        minutesElement.textContent = String(minutes).padStart(2, "0");
+        secondsElement.textContent = String(seconds).padStart(2, "0");
+      }
 
-<p class="lead">
-  The official date, venue and full programme will be announced soon.
-  Keep checking this page for updates.
-</p>
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    })();
+  </script>
 
-<a class="btn btn-white" href="programme.html">
-  View Programme
-</a>
-
-</section>
-
-<!-- BIBLE VERSE -->
-
-<section class="quote">
-
-<div class="quote-mark">
-  “
-</div>
-
-<blockquote>
-  Let everything that has breath praise the Lord.
-</blockquote>
-
-<cite>
-  Psalm 150:6
-</cite>
-
-</section>
-
-<!-- REGISTRATION -->
-
-<section class="register">
-
-<div class="section">
-
-  <div class="label light">
-    JOIN US
-  </div>
-
-  <h2 class="title">
-    Be Part of Sabbath in Song 2027
-  </h2>
-
-  <p class="lead">
-    Registration and participation information will be available here.
-  </p>
-
-  <a class="btn" href="register.html">
-    Registration &amp; Enquiries
-  </a>
-
-</div>
-
-</section>
-
-<!-- FOOTER -->
-
-<footer>
-
-<div class="footer-logo">
-  SABBATH IN SONG
-</div>
-
-<p class="motto">
-  Music for a Greater Purpose
-</p>
-
-<p class="copy">
-  © 2027 Sabbath in Song. All rights reserved.
-</p>
-
-</footer>
-
-</body> </html>
+</body>
+</html>
