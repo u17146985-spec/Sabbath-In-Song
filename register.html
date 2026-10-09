@@ -693,48 +693,87 @@
     </p>
   </footer>
 
-  <script>
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
+ 
+<script>
+const scriptURL = "https://script.google.com/macros/s/AKfycbzoLRRVSnJpNw8KKOaZTNmRtQLHIWg9HNRJVRG5brTSnzvFhGA_4mB2HUeUTxgQEhD2/exec";
 
-    document.getElementById("registration-form").addEventListener(
-      "submit",
-      function (event) {
-        event.preventDefault();
+const form = document.querySelector("form");
 
-        const form = event.currentTarget;
+if (form) {
+  form.addEventListener("submit", async function (event) {
+    event.preventDefault();
 
-        if (!form.reportValidity()) {
-          return;
-        }
-
-        const data = new FormData(form);
-
-        const subject = encodeURIComponent(
-          "Sabbath in Song 2027 - Registration Enquiry"
-        );
-
-        const body = encodeURIComponent(
-          "SABBATH IN SONG 2027 REGISTRATION ENQUIRY\n\n" +
-          "First Name: " + data.get("first_name") + "\n" +
-          "Last Name: " + data.get("last_name") + "\n" +
-          "Email: " + data.get("email") + "\n" +
-          "Contact Number: " + data.get("phone") + "\n" +
-          "Church or Organisation: " + (data.get("church") || "Not provided") + "\n" +
-          "Participation: " + data.get("participation") + "\n\n" +
-          "Additional Information:\n" + (data.get("message") || "None") + "\n\n" +
-          "Please confirm the next steps for registration."
-        );
-
-        const mailto =
-          "mailto:sabbathinsongg@gmail.com?subject=" +
-          subject + "&body=" + body;
-
-        window.location.href = mailto;
-      }
+    const button = form.querySelector(
+      'button[type="submit"], input[type="submit"]'
     );
+
+    const originalText = button
+      ? (button.textContent || button.value)
+      : "";
+
+    const status = document.getElementById("registration-status");
+
+    if (button) {
+      button.disabled = true;
+      if (button.tagName === "INPUT") {
+        button.value = "Submitting...";
+      } else {
+        button.textContent = "Submitting...";
+      }
+    }
+
+    try {
+      const formData = new FormData(form);
+      const params = new URLSearchParams();
+
+      for (const [key, value] of formData.entries()) {
+        params.append(key, value);
+      }
+
+      const consent = form.querySelector('[name="consent"]');
+      params.set("consent", consent && consent.checked ? "Yes" : "No");
+
+      await fetch(scriptURL, {
+        method: "POST",
+        mode: "no-cors",
+        body: params
+      });
+
+      if (status) {
+        status.textContent =
+          "Your registration request has been sent. Please contact us if you need confirmation.";
+      } else {
+        alert(
+          "Your registration request has been sent. Please contact us if you need confirmation."
+        );
+      }
+
+      form.reset();
+
+    } catch (error) {
+      if (status) {
+        status.textContent =
+          "We could not send your request. Please try again or email sabbathinsongg@gmail.com.";
+      } else {
+        alert(
+          "We could not send your request. Please email sabbathinsongg@gmail.com."
+        );
+      }
+    } finally {
+      if (button) {
+        button.disabled = false;
+
+        if (button.tagName === "INPUT") {
+          button.value = originalText;
+        } else {
+          button.textContent = originalText;
+        }
+      }
+    }
+  });
+}
   </script>
 
 </body>
 </html>
-```
+
