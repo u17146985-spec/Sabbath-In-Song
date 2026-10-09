@@ -693,25 +693,34 @@
     </p>
   </footer>
 
- 
 <script>
-const scriptURL = "https://script.google.com/macros/library/d/1NvmBj1lMy2XMCvh8azPy0Y-dLb9dUUWOXUUyFRqs8nH3TGTV_lx4eGHl/3";
+const scriptURL = "https://script.google.com/macros/s/AKfycbzoLRRVSnJpNw8KKOaZTNmRtQLHIWg9HNRJVRG5brTSnzvFhGA_4mB2HUeUTxgQEhD2/exec";
 
-const form = document.querySelector("form");
+const form = document.getElementById("registration-form");
 
 if (form) {
   form.addEventListener("submit", async function (event) {
     event.preventDefault();
 
-    const button = form.querySelector(
-      'button[type="submit"], input[type="submit"]'
-    );
+    const firstName = form.querySelector('[name="first_name"]')?.value.trim() || "";
+    const lastName = form.querySelector('[name="last_name"]')?.value.trim() || "";
+    const email = form.querySelector('[name="email"]')?.value.trim() || "";
+    const consentBox = form.querySelector('[name="consent"]');
 
-    const originalText = button
-      ? (button.textContent || button.value)
+    if (!firstName || !lastName || !email) {
+      alert("Please enter your first name, last name and email address.");
+      return;
+    }
+
+    if (!consentBox || !consentBox.checked) {
+      alert("Please tick the consent checkbox before submitting.");
+      return;
+    }
+
+    const button = form.querySelector('button[type="submit"], input[type="submit"]');
+    const oldText = button
+      ? (button.tagName === "INPUT" ? button.value : button.textContent)
       : "";
-
-    const status = document.getElementById("registration-status");
 
     if (button) {
       button.disabled = true;
@@ -723,15 +732,17 @@ if (form) {
     }
 
     try {
-      const formData = new FormData(form);
       const params = new URLSearchParams();
 
-      for (const [key, value] of formData.entries()) {
+      new FormData(form).forEach((value, key) => {
         params.append(key, value);
-      }
+      });
 
-      const consent = form.querySelector('[name="consent"]');
-      params.set("consent", consent && consent.checked ? "Yes" : "No");
+      // Send consistent names to Apps Script.
+      params.set("first_name", firstName);
+      params.set("last_name", lastName);
+      params.set("email", email);
+      params.set("consent", "Yes");
 
       await fetch(scriptURL, {
         method: "POST",
@@ -739,40 +750,28 @@ if (form) {
         body: params
       });
 
-      if (status) {
-        status.textContent =
-          "Your registration request has been sent. Please contact us if you need confirmation.";
-      } else {
-        alert(
-          "Your registration request has been sent. Please contact us if you need confirmation."
-        );
-      }
+      alert("Your registration request has been sent. Please check with the event team if you need confirmation.");
 
       form.reset();
 
     } catch (error) {
-      if (status) {
-        status.textContent =
-          "We could not send your request. Please try again or email sabbathinsongg@gmail.com.";
-      } else {
-        alert(
-          "We could not send your request. Please email sabbathinsongg@gmail.com."
-        );
-      }
+      alert("We could not send your registration. Please email sabbathinsongg@gmail.com.");
+      console.error(error);
+
     } finally {
       if (button) {
         button.disabled = false;
-
         if (button.tagName === "INPUT") {
-          button.value = originalText;
+          button.value = oldText;
         } else {
-          button.textContent = originalText;
+          button.textContent = oldText;
         }
       }
     }
   });
 }
-  </script>
+</script>
+ 
 
 </body>
 </html>
