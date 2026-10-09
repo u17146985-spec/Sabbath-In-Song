@@ -1,127 +1,797 @@
 
-<!doctype html>
+```html
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Home | Sabbath in Song 2027</title>
-  <meta name="description" content="Join Sabbath in Song 2027 on 6 March 2027 for a sacred musical imbizo. Music for a Greater Purpose.">
+  <title>Sabbath in Song 2027 | Music for a Greater Purpose</title>
 
-  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Join us for Sabbath in Song 2027, where music becomes ministry. Music for a Greater Purpose.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    .site-logo {
-      height: 64px;
-      width: auto;
-      max-width: 280px;
+    :root {
+      --navy: #071f3b;
+      --blue: #1268ad;
+      --light-blue: #edf4fb;
+      --white: #ffffff;
+      --text: #34465b;
+      --muted: #718096;
+      --border: #dce7f2;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Montserrat", sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
       display: block;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: 0 auto;
+    }
+
+    /* NAVIGATION */
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 3px 16px rgba(7, 31, 59, 0.05);
+    }
+
+    .nav-inner {
+      width: min(1200px, 92%);
+      min-height: 82px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+
+    .brand img {
+      width: 58px;
+      height: 58px;
       object-fit: contain;
     }
 
-    .nav .logo {
+    .nav-links {
       display: flex;
       align-items: center;
+      gap: 25px;
+      flex-wrap: wrap;
     }
 
-    /* LIVE COUNTDOWN */
-    .countdown-section {
-      padding: 75px 6%;
-      text-align: center;
-      background: linear-gradient(180deg, #f5faff, #ffffff);
-      border-bottom: 1px solid #dce7f0;
-    }
-
-    .countdown-label {
-      color: #1268ad;
+    .nav-links a {
+      color: var(--navy);
       font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 3px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--blue);
+    }
+
+    .nav-links .nav-register {
+      padding: 12px 17px;
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 4px;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 690px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: var(--white);
+      background:
+        linear-gradient(
+          135deg,
+          rgba(4, 22, 43, 0.96),
+          rgba(10, 62, 108, 0.88)
+        );
+      padding: 90px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero::before {
+      width: 520px;
+      height: 520px;
+      top: -230px;
+      left: -160px;
+    }
+
+    .hero::after {
+      width: 650px;
+      height: 650px;
+      bottom: -370px;
+      right: -180px;
+    }
+
+    .hero-content {
+      width: min(900px, 100%);
+      margin: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: #d7eaff;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(52px, 9vw, 94px);
+      line-height: 0.98;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      display: block;
+      color: #c8e1ff;
+      font-weight: 400;
+    }
+
+    .hero-subtitle {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(22px, 3vw, 32px);
+      font-style: italic;
       margin-bottom: 14px;
     }
 
-    .countdown-section h2 {
-      color: #071f3b;
-      font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: clamp(32px, 5vw, 48px);
-      line-height: 1.15;
-      margin: 0 0 12px;
+    .hero-motto {
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 32px;
     }
 
-    .countdown-date {
-      color: #66788b;
-      font-size: 14px;
-      margin: 0 0 30px;
+    .hero-date {
+      font-size: 13px;
+      letter-spacing: 2px;
+      margin-bottom: 34px;
     }
 
-    .countdown-timer {
+    .hero-buttons {
       display: flex;
       justify-content: center;
-      align-items: stretch;
+      align-items: center;
       flex-wrap: wrap;
       gap: 14px;
     }
 
-    .countdown-box {
-      width: 112px;
-      min-height: 110px;
+    .btn {
+      display: inline-block;
+      padding: 15px 25px;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      transition: 0.25s ease;
+    }
+
+    .btn-primary {
+      background: var(--white);
+      color: var(--navy);
+    }
+
+    .btn-primary:hover {
+      background: #dcecff;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border-color: rgba(255, 255, 255, 0.7);
+      color: var(--white);
+    }
+
+    .btn-outline:hover {
+      background: var(--white);
+      color: var(--navy);
+    }
+
+    /* COUNTDOWN */
+
+    .countdown-section {
+      background: var(--navy);
+      color: var(--white);
+      padding: 35px 20px;
+      text-align: center;
+    }
+
+    .countdown-heading {
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      color: #d3e5fa;
+    }
+
+    .countdown {
       display: flex;
-      flex-direction: column;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 35px;
+    }
+
+    .countdown-item {
+      min-width: 75px;
+    }
+
+    .countdown-number {
+      display: block;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 42px;
+      line-height: 1.1;
+      color: var(--white);
+    }
+
+    .countdown-label {
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #c3d9ef;
+    }
+
+    #countdown-message {
+      margin-top: 14px;
+      font-size: 12px;
+      color: #d3e5fa;
+    }
+
+    /* GENERAL SECTION STYLING */
+
+    .section {
+      padding: 90px 0;
+    }
+
+    .section-label {
+      display: block;
+      color: var(--blue);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    .section-title {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(36px, 5vw, 52px);
+      line-height: 1.1;
+      color: var(--navy);
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .section-intro {
+      max-width: 700px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    /* EVENT DETAILS */
+
+    .event-details {
+      background: var(--white);
+      text-align: center;
+    }
+
+    .event-details-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+      margin-top: 45px;
+    }
+
+    .detail-card {
+      padding: 32px 22px;
+      background: var(--light-blue);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+
+    .detail-icon {
+      width: 54px;
+      height: 54px;
+      margin: 0 auto 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      background: var(--navy);
+      color: var(--white);
+      font-size: 23px;
+    }
+
+    .detail-card h3 {
+      font-size: 12px;
+      color: var(--navy);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 9px;
+    }
+
+    .detail-card p {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* FEATURED ARTISTS */
+
+    .featured-artists-section {
+      padding: 85px 0;
+      background: #f4f8fd;
+      text-align: center;
+    }
+
+    .featured-artists-inner {
+      width: min(1120px, 90%);
+      margin: 0 auto;
+    }
+
+    .featured-artists-label {
+      display: block;
+      margin-bottom: 14px;
+      color: var(--blue);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 4px;
+    }
+
+    .featured-artists-inner h2 {
+      color: var(--navy);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(38px, 5vw, 54px);
+      line-height: 1.1;
+      margin-bottom: 18px;
+    }
+
+    .featured-artists-intro {
+      max-width: 650px;
+      margin: 0 auto 38px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .featured-artists-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+      width: 100%;
+      margin: 0 auto 38px;
+    }
+
+    .featured-artist-card {
+      min-width: 0;
+      padding: 38px 20px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(7, 31, 59, 0.07);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .featured-artist-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 32px rgba(7, 31, 59, 0.12);
+    }
+
+    .featured-artist-icon {
+      display: flex;
       align-items: center;
       justify-content: center;
-      background: #071f3b;
-      color: #ffffff;
-      border: 1px solid #174a78;
-      border-radius: 14px;
-      box-shadow: 0 8px 20px #071f3b14;
+      width: 65px;
+      height: 65px;
+      margin: 0 auto 22px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: var(--white);
+      font-size: 32px;
     }
 
-    .countdown-box span {
-      font-size: 36px;
-      font-weight: 700;
-      line-height: 1.2;
-      font-variant-numeric: tabular-nums;
+    .featured-artist-card h3 {
+      color: var(--navy);
+      font-size: 15px;
+      line-height: 1.5;
+      margin-bottom: 10px;
     }
 
-    .countdown-box small {
-      color: #9ddcff;
+    .featured-artist-card p {
+      color: var(--blue);
       font-size: 10px;
       font-weight: 700;
       letter-spacing: 2px;
       text-transform: uppercase;
-      margin-top: 8px;
     }
 
-    .countdown-message {
-      color: #1268ad;
-      font-size: 12px;
+    .featured-artists-button {
+      display: inline-block;
+      padding: 14px 26px;
+      border-radius: 4px;
+      background: var(--navy);
+      color: var(--white);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      transition: background 0.2s ease;
+    }
+
+    .featured-artists-button:hover {
+      background: var(--blue);
+    }
+
+    /* WELCOME */
+
+    .welcome-section {
+      padding: 100px 0;
+      background: var(--white);
+    }
+
+    .welcome-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 65px;
+    }
+
+    .welcome-copy p {
+      font-size: 14px;
+      line-height: 2;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .welcome-highlight {
+      padding: 35px;
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 12px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .welcome-highlight::after {
+      content: "♫";
+      position: absolute;
+      right: 15px;
+      bottom: -60px;
+      font-size: 190px;
+      color: rgba(255, 255, 255, 0.06);
+    }
+
+    .welcome-highlight h3 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 35px;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .welcome-highlight p {
+      font-size: 13px;
+      line-height: 1.9;
+      color: #d8e7f8;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* IMBIZO */
+
+    .imbizo-section {
+      padding: 90px 0;
+      text-align: center;
+      background: var(--light-blue);
+    }
+
+    .imbizo-content {
+      max-width: 820px;
+      margin: auto;
+    }
+
+    .imbizo-content p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 2;
+      margin-bottom: 18px;
+    }
+
+    .imbizo-emphasis {
+      margin-top: 30px;
+      padding: 25px;
+      border-left: 4px solid var(--blue);
+      background: var(--white);
+      color: var(--navy);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 25px;
+      font-style: italic;
+      text-align: left;
+    }
+
+    /* SCRIPTURE */
+
+    .scripture-section {
+      padding: 95px 20px;
+      background: var(--navy);
+      text-align: center;
+      color: var(--white);
+    }
+
+    .scripture-symbol {
+      font-family: Georgia, serif;
+      font-size: 65px;
+      color: #b8d9ff;
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .scripture-quote {
+      max-width: 850px;
+      margin: auto;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(28px, 4vw, 43px);
+      line-height: 1.35;
+    }
+
+    .scripture-reference {
+      margin-top: 25px;
+      color: #c9e1fb;
+      font-size: 11px;
       font-weight: 600;
-      letter-spacing: 1px;
-      margin: 28px 0 0;
+      letter-spacing: 3px;
+      text-transform: uppercase;
     }
 
-    @media (max-width: 500px) {
-      .site-logo {
-        height: 55px;
-        max-width: 200px;
+    /* REGISTRATION */
+
+    .registration-section {
+      padding: 90px 20px;
+      text-align: center;
+      background: var(--white);
+    }
+
+    .registration-section p {
+      max-width: 650px;
+      margin: 0 auto 30px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .registration-button {
+      display: inline-block;
+      padding: 16px 28px;
+      border-radius: 4px;
+      background: var(--navy);
+      color: var(--white);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      transition: background 0.2s ease;
+    }
+
+    .registration-button:hover {
+      background: var(--blue);
+    }
+
+    .registration-note {
+      display: block;
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    /* FOOTER */
+
+    .footer {
+      padding: 55px 20px 25px;
+      background: #041629;
+      color: var(--white);
+    }
+
+    .footer-inner {
+      width: min(1120px, 100%);
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 35px;
+    }
+
+    .footer h3 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 26px;
+      margin-bottom: 15px;
+    }
+
+    .footer h4 {
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 17px;
+    }
+
+    .footer p,
+    .footer a {
+      font-size: 12px;
+      color: #c4d2e1;
+      line-height: 2;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 5px;
+    }
+
+    .footer a:hover {
+      color: var(--white);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding-top: 22px;
+      text-align: center;
+      font-size: 10px;
+      color: #9fb0c3;
+    }
+
+    /* RESPONSIVE DESIGN */
+
+    @media (max-width: 850px) {
+      .nav-inner {
+        padding: 15px 0;
+        flex-direction: column;
       }
 
-      .countdown-section {
-        padding: 55px 5%;
+      .nav-links {
+        justify-content: center;
+        gap: 14px;
       }
 
-      .countdown-timer {
-        gap: 9px;
+      .event-details-grid {
+        grid-template-columns: 1fr;
       }
 
-      .countdown-box {
-        width: calc(50% - 9px);
-        max-width: 145px;
-        min-height: 95px;
+      .welcome-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
       }
 
-      .countdown-box span {
-        font-size: 32px;
+      .footer-inner {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        min-height: 600px;
+        padding: 75px 20px;
+      }
+
+      .hero-eyebrow {
+        letter-spacing: 3px;
+      }
+
+      .hero-motto {
+        font-size: 10px;
+        letter-spacing: 2px;
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+
+      .nav-links a {
+        font-size: 9px;
+      }
+
+      .brand {
+        font-size: 12px;
+      }
+
+      .section {
+        padding: 70px 0;
+      }
+
+      .featured-artists-section {
+        padding: 70px 0;
+      }
+
+      .featured-artists-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .countdown {
+        gap: 18px;
+      }
+
+      .countdown-item {
+        min-width: 60px;
+      }
+
+      .countdown-number {
+        font-size: 34px;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .welcome-highlight {
+        padding: 28px;
       }
     }
   </style>
@@ -130,375 +800,415 @@
 <body>
 
   <!-- NAVIGATION -->
-  <nav class="nav">
+  <header class="navbar">
+    <div class="nav-inner">
 
-    <a class="logo" href="index.html">
-      <img
-        src="sabbath-in-song-logo.jpg.jpeg"
-        alt="Sabbath in Song"
-        class="site-logo"
-      >
-    </a>
+      <a href="index.html" class="brand">
+        <img
+          src="sabbath-in-song-logo.jpg.jpeg"
+          alt="Sabbath in Song logo"
+        >
+        <span>SABBATH IN SONG 2027</span>
+      </a>
 
-    <button
-      class="menu"
-      type="button"
-      aria-label="Toggle navigation menu"
-      onclick="document.querySelector('.links').classList.toggle('open')"
-    >
-      ☰
-    </button>
-
-    <div class="links">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="programme.html">Programme</a>
-      <a href="artists.html">Artists</a>
-      <a href="gallery.html">Gallery</a>
-      <a class="cta" href="register.html">Register</a>
-    </div>
-
-  </nav>
-
-  <!-- HERO -->
-  <header class="hero">
-
-    <div class="hero-overlay"></div>
-
-    <div class="hero-inner">
-
-      <div class="tag">
-        SABBATH IN SONG • 2027
-      </div>
-
-      <h1>
-        Music for a<br>
-        <span>Greater Purpose</span>
-      </h1>
-
-      <p class="hero-subtitle">
-        Where Music Becomes Ministry
-      </p>
-
-      <p class="hero-description">
-        A sacred musical imbizo bringing worship, inspiration,
-        fellowship and the power of music together.
-      </p>
-
-      <div class="hero-verse">
-        “Let everything that has breath praise the Lord.”
-        <span>Psalm 150:6</span>
-      </div>
-
-      <div class="buttons">
-
-        <a class="btn btn-white" href="register.html">
-          Be Part of Sabbath in Song 2027
-        </a>
-
-        <a class="btn btn-outline" href="about.html">
-          Discover More
-        </a>
-
-      </div>
-
-      <div class="coming-soon">
-        <span></span>
-        Something Special Is Coming
-        <span></span>
-      </div>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="programme.html">Programme</a>
+        <a href="artists.html">Artists</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="register.html" class="nav-register">Register</a>
+      </nav>
 
     </div>
-
   </header>
 
-  <!-- LIVE COUNTDOWN -->
-  <section class="countdown-section" aria-labelledby="countdown-heading">
+  <main>
 
-    <div class="countdown-label">
-      SAVE THE DATE
-    </div>
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="hero-content">
 
-    <h2 id="countdown-heading">
-      Counting Down to a Greater Purpose
-    </h2>
+        <p class="hero-eyebrow">A Celebration of Faith Through Music</p>
 
-    <p class="countdown-date">
-      Saturday, 6 March 2027
-    </p>
+        <h1>
+          Sabbath in
+          <span>Song 2027</span>
+        </h1>
 
-    <div
-      class="countdown-timer"
-      id="countdown"
-      role="timer"
-      aria-label="Countdown to Sabbath in Song 2027"
-    >
+        <p class="hero-subtitle">Where Music Becomes Ministry</p>
 
-      <div class="countdown-box">
-        <span id="days">---</span>
-        <small>Days</small>
-      </div>
+        <p class="hero-motto">Music for a Greater Purpose</p>
 
-      <div class="countdown-box">
-        <span id="hours">--</span>
-        <small>Hours</small>
-      </div>
-
-      <div class="countdown-box">
-        <span id="minutes">--</span>
-        <small>Minutes</small>
-      </div>
-
-      <div class="countdown-box">
-        <span id="seconds">--</span>
-        <small>Seconds</small>
-      </div>
-
-    </div>
-
-    <p class="countdown-message">
-      Music for a Greater Purpose · Psalm 150:6
-    </p>
-
-  </section> 
-<!-- EVENT DETAILS -->
-<section class="event-details-section">
-
-  <div class="event-details-inner">
-
-    <div class="event-details-heading">
-      <span class="event-details-label">PLAN AHEAD</span>
-
-      <h2>Event Details</h2>
-
-      <p>
-        Prepare to imbizo a special Sabbath filled with
-        sacred music, worship and fellowship.
-      </p>
-    </div>
-
-    <div class="event-details-grid">
-
-      <article class="event-detail-card">
-        <div class="event-detail-icon">✦</div>
-        <h3>Event Date</h3>
-        <p class="event-detail-main">Saturday</p>
-        <p>6 March 2027</p>
-        <span class="event-detail-note">Save the date</span>
-      </article>
-
-      <article class="event-detail-card">
-        <div class="event-detail-icon">⌖</div>
-        <h3>Venue</h3>
-        <p class="event-detail-main">To Be Announced</p>
-        <p>Official venue details will be shared here.</p>
-        <span class="event-detail-note">Stay tuned for updates</span>
-      </article>
-
-      <article class="event-detail-card">
-        <div class="event-detail-icon">♫</div>
-        <h3>Our Purpose</h3>
-        <p class="event-detail-main">Music for a Greater Purpose</p>
-        <p>A sacred imbizo of music, worship and fellowship.</p>
-        <span class="event-detail-note">Psalm 150:6</span>
-      </article>
-
-    </div>
-
-    <div class="event-details-footer">
-      <p>Where Music Becomes Ministry</p>
-      <a href="register.html" class="btn btn-white">
-        Registration &amp; Enquiries
-      </a>
-    </div>
-
-  </div>
-
-</section>
-<article class="featured-artist-card">
-          <div class="featured-artist-icon">♫</div>
-          <h3>Artist Announcement</h3>
-          <p>Coming Soon</p>
-        </article>
-
-        <article class="featured-artist-card">
-          <div class="featured-artist-icon">♫</div>
-          <h3>Artist Announcement</h3>
-          <p>Coming Soon</p>
-        </article>
-
-      </div>
-
-      <a href="artists.html" class="btn btn-primary">
-        Explore Artists
-      </a>
-
-    </div>
-  </section>
-  <!-- WELCOME SECTION -->
-  <section class="section center">
-
-    <div class="label">
-      WELCOME
-    </div>
-
-    <h2 class="title">
-      Where Music Becomes Ministry
-    </h2>
-
-    <p class="lead">
-      Sabbath in Song is a special Sabbath imbizo created to glorify God
-      through sacred music, worship, fellowship and meaningful moments.
-    </p>
-
-    <div class="cards">
-
-      <article class="card">
-        <div class="card-icon">♪</div>
-        <h3>Worship</h3>
-        <p>
-          Lift your heart through sacred music and collective praise.
+        <p class="hero-date">
+          SATURDAY, 6 MARCH 2027
         </p>
-      </article>
 
-      <article class="card">
-        <div class="card-icon">✦</div>
-        <h3>Inspiration</h3>
-        <p>
-          Be encouraged through music, testimonies and the Word.
-        </p>
-      </article>
+        <div class="hero-buttons">
+          <a href="about.html" class="btn btn-primary">
+            Discover the Vision
+          </a>
 
-      <article class="card">
-        <div class="card-icon">♡</div>
-        <h3>Fellowship</h3>
-        <p>
-          Connect, celebrate and share a memorable Sabbath together.
-        </p>
-      </article>
+          <a href="register.html" class="btn btn-outline">
+            Registration Information
+          </a>
+        </div>
 
-    </div>
-
-  </section>
-
-  <!-- 2027 imbizo -->
-  <section class="blue center">
-
-    <div class="label light">
-      2027 imbizo
-    </div>
-
-    <h2 class="title">
-      Something Special Is Coming
-    </h2>
-
-    <p class="lead">
-      Join us on 6 March 2027. Keep checking this page for venue,
-      programme and participation updates.
-    </p>
-
-    <a class="btn btn-white" href="programme.html">
-      View Programme
-    </a>
-
-  </section>
-
-  <!-- BIBLE VERSE -->
-  <section class="quote">
-
-    <div class="quote-mark">
-      “
-    </div>
-
-    <blockquote>
-      Let everything that has breath praise the Lord.
-    </blockquote>
-
-    <cite>
-      Psalm 150:6
-    </cite>
-
-  </section>
-
-  <!-- REGISTRATION -->
-  <section class="register">
-
-    <div class="section">
-
-      <div class="label light">
-        JOIN US
       </div>
+    </section>
 
-      <h2 class="title">
-        Be Part of Sabbath in Song 2027
-      </h2>
+    <!-- COUNTDOWN -->
+    <section class="countdown-section">
+      <div class="container">
 
-      <p class="lead">
-        Registration and participation information will be available here.
-      </p>
+        <p class="countdown-heading">
+          The Journey to Sabbath in Song 2027
+        </p>
 
-      <a class="btn" href="register.html">
-        Registration &amp; Enquiries
-      </a>
+        <div class="countdown" id="countdown">
 
-    </div>
+          <div class="countdown-item">
+            <span class="countdown-number" id="days">---</span>
+            <span class="countdown-label">Days</span>
+          </div>
 
-  </section>
+          <div class="countdown-item">
+            <span class="countdown-number" id="hours">--</span>
+            <span class="countdown-label">Hours</span>
+          </div>
+
+          <div class="countdown-item">
+            <span class="countdown-number" id="minutes">--</span>
+            <span class="countdown-label">Minutes</span>
+          </div>
+
+          <div class="countdown-item">
+            <span class="countdown-number" id="seconds">--</span>
+            <span class="countdown-label">Seconds</span>
+          </div>
+
+        </div>
+
+        <p id="countdown-message" aria-live="polite"></p>
+
+      </div>
+    </section>
+
+    <!-- EVENT DETAILS -->
+    <section class="section event-details">
+      <div class="container">
+
+        <span class="section-label">Save the Date</span>
+
+        <h2 class="section-title">An Encounter Through Music</h2>
+
+        <p class="section-intro">
+          Prepare for a meaningful gathering where voices unite,
+          faith is celebrated, and music becomes a ministry that
+          points hearts towards God.
+        </p>
+
+        <div class="event-details-grid">
+
+          <article class="detail-card">
+            <div class="detail-icon" aria-hidden="true">♫</div>
+            <h3>Event</h3>
+            <p>Sabbath in Song 2027</p>
+          </article>
+
+          <article class="detail-card">
+            <div class="detail-icon" aria-hidden="true">▦</div>
+            <h3>Date</h3>
+            <p>Saturday, 6 March 2027</p>
+          </article>
+
+          <article class="detail-card">
+            <div class="detail-icon" aria-hidden="true">⌖</div>
+            <h3>Venue</h3>
+            <p>To Be Announced</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED ARTISTS -->
+    <section class="featured-artists-section">
+      <div class="featured-artists-inner">
+
+        <span class="featured-artists-label">
+          SABBATH IN SONG 2027
+        </span>
+
+        <h2>Meet the Artists</h2>
+
+        <p class="featured-artists-intro">
+          Voices united in worship, praise and a greater purpose.
+          Our artists will be announced soon.
+        </p>
+
+        <div class="featured-artists-grid">
+
+          <article class="featured-artist-card">
+            <div class="featured-artist-icon" aria-hidden="true">♫</div>
+            <h3>Artist Announcement</h3>
+            <p>Coming Soon</p>
+          </article>
+
+          <article class="featured-artist-card">
+            <div class="featured-artist-icon" aria-hidden="true">♫</div>
+            <h3>Artist Announcement</h3>
+            <p>Coming Soon</p>
+          </article>
+
+          <article class="featured-artist-card">
+            <div class="featured-artist-icon" aria-hidden="true">♫</div>
+            <h3>Artist Announcement</h3>
+            <p>Coming Soon</p>
+          </article>
+
+        </div>
+
+        <a href="artists.html" class="featured-artists-button">
+          Explore Artists
+        </a>
+
+      </div>
+    </section>
+
+    <!-- WELCOME SECTION -->
+    <section class="welcome-section">
+      <div class="container">
+
+        <div class="welcome-grid">
+
+          <div class="welcome-copy">
+
+            <span class="section-label">Welcome</span>
+
+            <h2 class="section-title">
+              More Than Music.<br>
+              A Ministry of Worship.
+            </h2>
+
+            <p>
+              Welcome to Sabbath in Song 2027, a gathering created
+              to celebrate the gift of music and its power to bring
+              people together in worship.
+            </p>
+
+            <p>
+              We believe music is more than a performance. It is a
+              ministry, a testimony, and an opportunity to share
+              the love of God through songs of faith and praise.
+            </p>
+
+            <p>
+              Join us as we prepare for a special Sabbath experience
+              dedicated to worship, fellowship and a greater purpose.
+            </p>
+
+            <a href="about.html" class="featured-artists-button">
+              Read Our Story
+            </a>
+
+          </div>
+
+          <div class="welcome-highlight">
+
+            <h3>Where Music Becomes Ministry</h3>
+
+            <p>
+              Every voice has a purpose. Every song can carry a
+              message of hope. Every note can become an offering
+              of praise. Together, let us use the gift of music
+              to glorify God.
+            </p>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 2027 IMBIZO -->
+    <section class="imbizo-section">
+      <div class="container imbizo-content">
+
+        <span class="section-label">The 2027 Gathering</span>
+
+        <h2 class="section-title">The Sabbath in Song Imbizo</h2>
+
+        <p>
+          Sabbath in Song 2027 is an invitation to come together
+          in a spirit of worship, unity and shared purpose.
+          Through music, fellowship and faith, we seek to create
+          a space where people can reconnect with God and one another.
+        </p>
+
+        <p>
+          As preparations continue, more details about the programme,
+          participating artists and venue will be shared through
+          our official channels.
+        </p>
+
+        <div class="imbizo-emphasis">
+          “Let everything that hath breath praise the Lord.”
+        </div>
+
+      </div>
+    </section>
+
+    <!-- BIBLE VERSE -->
+    <section class="scripture-section">
+      <div class="container">
+
+        <div class="scripture-symbol" aria-hidden="true">“</div>
+
+        <p class="scripture-quote">
+          Let everything that hath breath praise the Lord.
+          Praise ye the Lord.
+        </p>
+
+        <p class="scripture-reference">Psalm 150:6</p>
+
+      </div>
+    </section>
+
+    <!-- REGISTRATION -->
+    <section class="registration-section">
+      <div class="container">
+
+        <span class="section-label">Be Part of the Journey</span>
+
+        <h2 class="section-title">Something Special Is Coming</h2>
+
+        <p>
+          Be part of Sabbath in Song 2027. Visit our registration
+          page for the latest information and updates as we prepare
+          for this special gathering.
+        </p>
+
+        <a href="register.html" class="registration-button">
+          Visit Registration Page
+        </a>
+
+        <span class="registration-note">
+          Further event details will be announced soon.
+        </span>
+
+      </div>
+    </section>
+
+  </main>
 
   <!-- FOOTER -->
-  <footer>
+  <footer class="footer">
+    <div class="footer-inner">
 
-    <div class="footer-logo">
-      SABBATH IN SONG
+      <div>
+        <h3>Sabbath in Song 2027</h3>
+
+        <p>
+          Music for a Greater Purpose.<br>
+          Where Music Becomes Ministry.
+        </p>
+
+        <p>Psalm 150:6</p>
+      </div>
+
+      <div>
+        <h4>Quick Links</h4>
+
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="programme.html">Programme</a>
+          <a href="artists.html">Artists</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="register.html">Registration</a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Contact Us</h4>
+
+        <p>
+          Email:
+          <a href="mailto:sabbathinsongg@gmail.com">
+            sabbathinsongg@gmail.com
+          </a>
+        </p>
+
+        <p>
+          Phone:
+          <a href="tel:+27814799675">
+            +27 81 479 9675
+          </a>
+        </p>
+      </div>
+
     </div>
 
-    <p class="motto">
-      Music for a Greater Purpose
-    </p>
-
-    <p class="copy">
-      © 2027 Sabbath in Song. All rights reserved.
-    </p>
-
+    <div class="footer-bottom">
+      <p>
+        &copy; <span id="current-year">2026</span>
+        Sabbath in Song. All rights reserved.
+      </p>
+    </div>
   </footer>
 
   <!-- COUNTDOWN SCRIPT -->
   <script>
-    (function () {
-      // 6 March 2027 at midnight in South Africa (UTC+02:00)
-      const eventDate = new Date("2027-03-06T00:00:00+02:00").getTime();
+    const eventDate = new Date("2027-03-06T00:00:00+02:00").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = eventDate - now;
 
       const daysElement = document.getElementById("days");
       const hoursElement = document.getElementById("hours");
       const minutesElement = document.getElementById("minutes");
       const secondsElement = document.getElementById("seconds");
-      const countdownElement = document.getElementById("countdown");
+      const messageElement = document.getElementById("countdown-message");
 
-      function updateCountdown() {
-        const now = Date.now();
-        const difference = eventDate - now;
-
-        if (difference <= 0) {
-          countdownElement.innerHTML =
-            '<p class="countdown-message">Sabbath in Song 2027 is here! Let everything that has breath praise the Lord.</p>';
-          return;
-        }
-
-        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
-        const minutes = Math.floor((difference / (1000 * 60)) % 60);
-        const seconds = Math.floor((difference / 1000) % 60);
-
-        daysElement.textContent = String(days).padStart(3, "0");
-        hoursElement.textContent = String(hours).padStart(2, "0");
-        minutesElement.textContent = String(minutes).padStart(2, "0");
-        secondsElement.textContent = String(seconds).padStart(2, "0");
+      if (distance <= 0) {
+        daysElement.textContent = "0";
+        hoursElement.textContent = "0";
+        minutesElement.textContent = "0";
+        secondsElement.textContent = "0";
+        messageElement.textContent =
+          "Today is the day! Welcome to Sabbath in Song.";
+        return;
       }
 
-      updateCountdown();
-      setInterval(updateCountdown, 1000);
-    })();
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
+      const minutes = Math.floor(
+        (distance % (1000 * 60 * 60)) / (1000 * 60)
+      );
+      const seconds = Math.floor(
+        (distance % (1000 * 60)) / 1000
+      );
+
+      daysElement.textContent = days;
+      hoursElement.textContent = String(hours).padStart(2, "0");
+      minutesElement.textContent = String(minutes).padStart(2, "0");
+      secondsElement.textContent = String(seconds).padStart(2, "0");
+
+      messageElement.textContent =
+        "We look forward to worshipping with you.";
+    }
+
+    document.getElementById("current-year").textContent =
+      new Date().getFullYear();
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
   </script>
 
 </body>
 </html>
+```
