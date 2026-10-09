@@ -1,778 +1,458 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Registration | Sabbath in Song 2027</title>
-
-  <meta name="description" content="Registration information for Sabbath in Song 2027 — Music for a Greater Purpose.">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <title>Register | Sabbath in Song 2027</title>
+  <meta name="description" content="Register your interest in Sabbath in Song 2027. Music for a Greater Purpose.">
 
   <style>
     :root {
-      --navy: #071f3b;
-      --blue: #1268ad;
-      --light: #f2f7fc;
+      --navy: #102d59;
+      --blue: #1769aa;
+      --light-blue: #edf5ff;
       --white: #ffffff;
-      --text: #34465b;
-      --muted: #718096;
-      --border: #dce7f2;
+      --text: #263449;
+      --muted: #617086;
+      --border: #d5dfeb;
     }
 
     * {
-      margin: 0;
-      padding: 0;
       box-sizing: border-box;
     }
 
     body {
-      font-family: "Montserrat", sans-serif;
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #edf5ff, #ffffff);
       color: var(--text);
-      line-height: 1.7;
-      background: var(--white);
+      line-height: 1.6;
     }
 
-    a {
-      text-decoration: none;
+    header {
+      background: var(--navy);
+      color: var(--white);
+      text-align: center;
+      padding: 38px 20px;
     }
 
-    .navbar {
-      background: var(--white);
+    header h1 {
+      margin: 0;
+      font-size: clamp(28px, 5vw, 42px);
+      letter-spacing: 1px;
+    }
+
+    header p {
+      margin: 8px 0 0;
+    }
+
+    .motto {
+      font-weight: bold;
+      color: #dceaff;
+    }
+
+    nav {
+      background: #ffffff;
+      padding: 14px;
+      text-align: center;
       border-bottom: 1px solid var(--border);
-      box-shadow: 0 3px 16px rgba(7, 31, 59, 0.05);
     }
 
-    .nav-inner {
-      width: min(1150px, 92%);
-      min-height: 82px;
-      margin: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
+    nav a {
       color: var(--navy);
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
-
-    .brand img {
-      width: 55px;
-      height: 55px;
-      object-fit: contain;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .nav-links a {
-      color: var(--navy);
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--blue);
-    }
-
-    .page-hero {
-      background: linear-gradient(135deg, #041629, #104c80);
-      color: var(--white);
-      text-align: center;
-      padding: 85px 20px;
-    }
-
-    .eyebrow {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: #c9e1fb;
-      margin-bottom: 18px;
-    }
-
-    .page-hero h1 {
-      font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: clamp(45px, 7vw, 72px);
-      line-height: 1.1;
-      margin-bottom: 18px;
-    }
-
-    .page-hero p {
-      max-width: 650px;
-      margin: auto;
-      font-size: 13px;
-      color: #e0edfa;
-    }
-
-    .event-strip {
-      background: var(--navy);
-      color: var(--white);
-      padding: 22px 20px;
-      text-align: center;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 1.5px;
-    }
-
-    .event-strip span {
+      text-decoration: none;
+      font-weight: bold;
       margin: 0 12px;
-      color: #8fc5ff;
     }
 
-    .registration-section {
-      padding: 75px 20px 90px;
-      background: var(--light);
+    nav a:hover {
+      text-decoration: underline;
     }
 
-    .registration-container {
-      width: min(1000px, 100%);
-      margin: auto;
+    main {
+      width: min(760px, 92%);
+      margin: 36px auto;
     }
 
-    .section-heading {
+    .intro {
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 26px;
     }
 
-    .section-heading .label {
-      color: var(--blue);
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-    }
-
-    .section-heading h2 {
-      font-family: "Cormorant Garamond", Georgia, serif;
+    .intro h2 {
       color: var(--navy);
-      font-size: clamp(36px, 5vw, 48px);
-      line-height: 1.2;
-      margin: 12px 0;
-    }
-
-    .section-heading p {
-      max-width: 650px;
-      margin: auto;
-      font-size: 13px;
-      color: var(--muted);
-    }
-
-    .registration-layout {
-      display: grid;
-      grid-template-columns: 0.85fr 1.5fr;
-      gap: 28px;
-      align-items: start;
-    }
-
-    .information-card {
-      padding: 32px 27px;
-      background: var(--navy);
-      color: var(--white);
-      border-radius: 12px;
-    }
-
-    .information-card h3 {
-      font-family: "Cormorant Garamond", Georgia, serif;
+      margin-bottom: 8px;
       font-size: 30px;
-      margin-bottom: 12px;
-    }
-
-    .information-card > p {
-      font-size: 12px;
-      color: #d5e5f5;
-      margin-bottom: 25px;
-    }
-
-    .info-item {
-      padding: 17px 0;
-      border-top: 1px solid rgba(255, 255, 255, 0.17);
-    }
-
-    .info-item strong {
-      display: block;
-      margin-bottom: 4px;
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      color: #c9e1fb;
-    }
-
-    .info-item span {
-      font-size: 12px;
     }
 
     .form-card {
       background: var(--white);
+      padding: clamp(20px, 5vw, 38px);
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(16, 45, 89, 0.10);
       border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 35px;
-      box-shadow: 0 10px 35px rgba(7, 31, 59, 0.06);
     }
 
     .form-card h3 {
-      font-family: "Cormorant Garamond", Georgia, serif;
       color: var(--navy);
-      font-size: 32px;
-      margin-bottom: 7px;
-    }
-
-    .form-description {
-      color: var(--muted);
-      font-size: 12px;
-      margin-bottom: 27px;
+      margin-top: 0;
     }
 
     .form-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 20px;
+      gap: 18px;
     }
 
     .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 7px;
-      margin-bottom: 19px;
+      margin-bottom: 18px;
     }
 
-    .form-group.full-width {
+    .full-width {
       grid-column: 1 / -1;
     }
 
     label {
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--navy);
+      display: block;
+      font-weight: bold;
+      margin-bottom: 7px;
     }
 
-    input,
+    input:not([type="checkbox"]),
     select,
     textarea {
       width: 100%;
-      padding: 13px 14px;
-      border: 1px solid #d4dfeb;
-      border-radius: 5px;
-      background: #fff;
+      padding: 12px;
+      border: 1px solid #bdcada;
+      border-radius: 8px;
+      font: inherit;
       color: var(--text);
-      font-family: inherit;
-      font-size: 12px;
+      background: #ffffff;
     }
 
     input:focus,
     select:focus,
     textarea:focus {
-      outline: 2px solid #b8d9ff;
+      outline: 2px solid #8ab9f0;
       border-color: var(--blue);
     }
 
     textarea {
-      min-height: 100px;
+      min-height: 110px;
       resize: vertical;
     }
 
-    .consent {
+    .consent-row {
       display: flex;
       align-items: flex-start;
-      gap: 10px;
-      margin: 5px 0 22px;
-      color: var(--muted);
-      font-size: 11px;
+      gap: 12px;
+      padding: 16px;
+      background: var(--light-blue);
+      border-radius: 8px;
+      margin: 8px 0 22px;
     }
 
-    .consent input {
-      width: auto;
-      margin-top: 5px;
-    }
-
-    .submit-button {
-      width: 100%;
-      padding: 16px 20px;
-      border: none;
-      border-radius: 5px;
-      background: var(--navy);
-      color: var(--white);
-      font-family: inherit;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
+    .consent-row input[type="checkbox"] {
+      flex: 0 0 auto;
+      width: 20px;
+      height: 20px;
+      margin: 3px 0 0;
       cursor: pointer;
-      transition: background 0.2s ease;
+      accent-color: var(--blue);
     }
 
-    .submit-button:hover {
+    .consent-row label {
+      margin: 0;
+      font-weight: normal;
+      cursor: pointer;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px 20px;
+      border: none;
+      border-radius: 8px;
       background: var(--blue);
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
     }
 
-    .form-note {
-      margin-top: 15px;
-      font-size: 10px;
+    button:hover {
+      background: var(--navy);
+    }
+
+    button:disabled {
+      opacity: 0.65;
+      cursor: wait;
+    }
+
+    #form-status {
+      margin-top: 16px;
+      font-weight: bold;
+      overflow-wrap: anywhere;
+    }
+
+    .event-details {
+      text-align: center;
+      margin-top: 28px;
       color: var(--muted);
+    }
+
+    footer {
       text-align: center;
+      background: var(--navy);
+      color: #ffffff;
+      padding: 25px 15px;
+      margin-top: 45px;
     }
 
-    .contact-section {
-      padding: 65px 20px;
-      text-align: center;
-      background: var(--white);
+    footer a {
+      color: #ffffff;
     }
 
-    .contact-section h2 {
-      font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: 38px;
-      color: var(--navy);
-      margin-bottom: 12px;
-    }
-
-    .contact-section p {
-      font-size: 12px;
-      color: var(--muted);
-      margin-bottom: 10px;
-    }
-
-    .contact-section a {
-      color: var(--blue);
-      font-weight: 600;
-    }
-
-    .footer {
-      background: #041629;
-      color: var(--white);
-      padding: 35px 20px 22px;
-      text-align: center;
-    }
-
-    .footer h3 {
-      font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: 28px;
-      margin-bottom: 8px;
-    }
-
-    .footer p {
-      color: #c4d2e1;
-      font-size: 11px;
-    }
-
-    .footer-links {
-      margin: 17px 0;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 18px;
-    }
-
-    .footer-links a {
-      color: #c4d2e1;
-      font-size: 10px;
-    }
-
-    .copyright {
-      margin-top: 22px;
-      padding-top: 20px;
-      border-top: 1px solid rgba(255, 255, 255, 0.15);
-    }
-
-    @media (max-width: 800px) {
-      .nav-inner {
-        flex-direction: column;
-        padding: 15px 0;
-      }
-
-      .nav-links {
-        justify-content: center;
-        gap: 13px;
-      }
-
-      .registration-layout {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 550px) {
-      .form-card {
-        padding: 25px 18px;
-      }
-
+    @media (max-width: 600px) {
       .form-grid {
         grid-template-columns: 1fr;
         gap: 0;
       }
 
-      .form-group.full-width {
+      .full-width {
         grid-column: auto;
       }
 
-      .event-strip {
-        line-height: 2.2;
-      }
-
-      .event-strip span {
-        margin: 0 5px;
-      }
-
-      .nav-links a {
-        font-size: 9px;
+      nav a {
+        display: inline-block;
+        margin: 5px 8px;
       }
     }
   </style>
 </head>
 
 <body>
-
-  <!-- NAVIGATION -->
-  <header class="navbar">
-    <div class="nav-inner">
-
-      <a href="index.html" class="brand">
-        <img src="sabbath-in-song-logo.jpg.jpeg" alt="Sabbath in Song logo">
-        <span>SABBATH IN SONG 2027</span>
-      </a>
-
-      <nav class="nav-links" aria-label="Main navigation">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="programme.html">Programme</a>
-        <a href="artists.html">Artists</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="register.html" class="active">Register</a>
-      </nav>
-
-    </div>
+  <header>
+    <h1>SABBATH IN SONG 2027</h1>
+    <p class="motto">Music for a Greater Purpose</p>
+    <p>Where Music Becomes Ministry</p>
+    <p>“Let everything that hath breath praise the Lord.” — Psalm 150:6</p>
   </header>
 
-  <!-- PAGE HERO -->
-  <section class="page-hero">
-    <p class="eyebrow">Be Part of Something Special</p>
-    <h1>Registration</h1>
-    <p>
-      Join us as we celebrate faith, fellowship and the gift of music.
-      Together, let us make music for a greater purpose.
-    </p>
-  </section>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#programme">Programme</a>
+    <a href="index.html#artists">Artists</a>
+    <a href="index.html#gallery">Gallery</a>
+  </nav>
 
-  <!-- EVENT SUMMARY -->
-  <div class="event-strip">
-    SABBATH IN SONG 2027
-    <span>✦</span>
-    SATURDAY, 6 MARCH 2027
-    <span>✦</span>
-    VENUE TO BE ANNOUNCED
-  </div>
+  <main>
+    <section class="intro">
+      <h2>Register Your Interest</h2>
+      <p>
+        Be part of Sabbath in Song 2027 — a celebration of faith,
+        worship, and music in ministry.
+      </p>
+    </section>
 
-  <!-- REGISTRATION FORM SECTION -->
-  <main class="registration-section">
-    <div class="registration-container">
+    <section class="form-card">
+      <h3>Registration Form</h3>
+      <p>Please complete the required fields below.</p>
 
-      <div class="section-heading">
-        <span class="label">Your Invitation</span>
-        <h2>Be Part of the Gathering</h2>
-        <p>
-          Please check the event updates and registration instructions
-          below. We look forward to sharing more information with you.
-        </p>
-      </div>
-
-      <div class="registration-layout">
-
-        <!-- EVENT INFORMATION -->
-        <aside class="information-card">
-          <h3>Event Information</h3>
-
-          <p>
-            Music for a Greater Purpose.
-            Where Music Becomes Ministry.
-          </p>
-
-          <div class="info-item">
-            <strong>Event</strong>
-            <span>Sabbath in Song 2027</span>
+      <form id="registration-form">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="first-name">First Name *</label>
+            <input
+              type="text"
+              id="first-name"
+              name="first_name"
+              autocomplete="given-name"
+              required
+              placeholder="Enter your first name"
+            >
           </div>
 
-          <div class="info-item">
-            <strong>Date</strong>
-            <span>Saturday, 6 March 2027</span>
+          <div class="form-group">
+            <label for="last-name">Last Name *</label>
+            <input
+              type="text"
+              id="last-name"
+              name="last_name"
+              autocomplete="family-name"
+              required
+              placeholder="Enter your last name"
+            >
           </div>
 
-          <div class="info-item">
-            <strong>Venue</strong>
-            <span>To Be Announced</span>
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              autocomplete="email"
+              required
+              placeholder="you@example.com"
+            >
           </div>
 
-          <div class="info-item">
-            <strong>Scripture</strong>
-            <span>Psalm 150:6</span>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              autocomplete="tel"
+              placeholder="+27..."
+            >
           </div>
 
-          <div class="info-item">
-            <strong>Contact Email</strong>
-            <span>sabbathinsongg@gmail.com</span>
+          <div class="form-group">
+            <label for="church">Church / Organisation</label>
+            <input
+              type="text"
+              id="church"
+              name="church"
+              placeholder="Your church or organisation"
+            >
           </div>
-        </aside>
 
-        <!-- REGISTRATION FORM -->
-        <section class="form-card">
-          <h3>Register Your Interest</h3>
+          <div class="form-group">
+            <label for="participation">How would you like to participate?</label>
+            <select id="participation" name="participation">
+              <option value="">Select an option</option>
+              <option value="Attendee">Attend the event</option>
+              <option value="Singer">Singer / Vocalist</option>
+              <option value="Musician">Musician</option>
+              <option value="Choir">Choir / Music Group</option>
+              <option value="Volunteer">Volunteer</option>
+              <option value="Sponsor">Sponsorship / Partnership</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
 
-          <p class="form-description">
-            Use this form to prepare your registration details.
-            Submit your details to register your interest in Sabbath in Song 2027. Your information will be recorded securely for the event organisers to follow up..
-          </p>
+          <div class="form-group full-width">
+            <label for="message">Additional Message (Optional)</label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Tell us anything the organising team should know."
+            ></textarea>
+          </div>
+        </div>
 
-          <form id="registration-form">
+        <div class="consent-row">
+          <input
+            type="checkbox"
+            id="consent"
+            name="consent"
+            value="Yes"
+            required
+          >
+          <label for="consent">
+            I agree that the Sabbath in Song organising team may use
+            the information I provide to contact me about this event.
+            I understand that I can contact the team with questions
+            about my information.
+          </label>
+        </div>
 
-            <div class="form-grid">
+        <button type="submit" id="submit-button">
+          Submit Registration
+        </button>
 
-              <div class="form-group">
-                <label for="first-name">First Name *</label>
-                <input
-                  type="text"
-                  id="first-name"
-                  name="first_name"
-                  autocomplete="given-name"
-                  required
-                  placeholder="Enter your first name"
-                >
-              </div>
+        <p id="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
 
-              <div class="form-group">
-                <label for="last-name">Last Name *</label>
-                <input
-                  type="text"
-                  id="last-name"
-                  name="last_name"
-                  autocomplete="family-name"
-                  required
-                  placeholder="Enter your last name"
-                >
-              </div>
-
-              <div class="form-group">
-                <label for="email">Email Address *</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  autocomplete="email"
-                  required
-                  placeholder="you@example.com"
-                >
-              </div>
-
-              <div class="form-group">
-                <label for="phone">Contact Number *</label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  autocomplete="tel"
-                  required
-                  placeholder="Enter your contact number"
-                >
-              </div>
-
-              <div class="form-group full-width">
-                <label for="church">Church or Organisation</label>
-                <input
-                  type="text"
-                  id="church"
-                  name="church"
-                  placeholder="Enter your church or organisation"
-                >
-              </div>
-
-              <div class="form-group full-width">
-                <label for="participation">How are you interested in participating? *</label>
-                <select id="participation" name="participation" required>
-                  <option value="">Select an option</option>
-                  <option value="attendee">Attending the event</option>
-                  <option value="choir">Choir or musical group</option>
-                  <option value="soloist">Soloist or vocalist</option>
-                  <option value="instrumentalist">Instrumentalist</option>
-                  <option value="volunteer">Volunteer</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-
-              <div class="form-group full-width">
-                <label for="message">Additional Information</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  placeholder="Share any questions or additional information"
-                ></textarea>
-              </div>
-
-            </div>
-
-            <label class="consent">
-              <input type="checkbox" id="consent" required>
-              <span>
-                I agree that the event organisers may use the contact
-                details I provide to respond to my enquiry about
-                Sabbath in Song 2027. *
-              </span>
-            </label>
-
-            <button type="submit" class="submit-button">
-              Prepare Registration Enquiry
-            </button>
-
-            <p class="form-note">
-              Required fields are marked with an asterisk (*).
-              Your registration details will be recorded for follow-up by the Sabbath in Song team.
-            </p>
-
-          </form>
-        </section>
-
-      </div>
-    </div>
+    <section class="event-details">
+      <p><strong>Event date:</strong> Saturday, 6 March 2027</p>
+      <p><strong>Venue:</strong> To be announced</p>
+    </section>
   </main>
 
-  <!-- CONTACT -->
-  <section class="contact-section">
-    <h2>Need More Information?</h2>
-
-    <p>
-      Contact the Sabbath in Song team for event enquiries.
-    </p>
-
+  <footer>
+    <p><strong>Sabbath in Song 2027</strong></p>
+    <p>Music for a Greater Purpose</p>
     <p>
       Email:
-      <a href="mailto:sabbathinsongg@gmail.com">
-        sabbathinsongg@gmail.com
-      </a>
+      <a href="mailto:sabbathinsongg@gmail.com">sabbathinsongg@gmail.com</a>
     </p>
-
-    <p>
-      Phone:
-      <a href="tel:+27814799675">
-        +27 81 479 9675
-      </a>
-    </p>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <h3>Sabbath in Song 2027</h3>
-
-    <p>Music for a Greater Purpose</p>
-    <p>Where Music Becomes Ministry</p>
-
-    <div class="footer-links">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="programme.html">Programme</a>
-      <a href="artists.html">Artists</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="register.html">Registration</a>
-    </div>
-
-    <p class="copyright">
-      &copy; <span id="year"></span> Sabbath in Song. All rights reserved.
-    </p>
+    <p>Phone: +27 81 479 9675</p>
+    <p>&copy; 2027 Sabbath in Song. All rights reserved.</p>
   </footer>
 
-<script>
-const scriptURL = "https://script.google.com/macros/s/AKfycby8yRnFw92OPah4VQWz3UFH7ihOvzTkDnCkwafOuoJPmNaNWsaR0oVTCe97pRyi3vNz/exec";
+  <script>
+    const scriptURL =
+      "https://script.google.com/macros/s/AKfycby8yRnFw92OPah4VQWz3UFH7ihOvzTkDnCkwafOuoJPmNaNWsaR0oVTCe97pRyi3vNz/exec";
 
-const form = document.getElementById("registration-form");
+    const form = document.getElementById("registration-form");
+    const statusMessage = document.getElementById("form-status");
+    const submitButton = document.getElementById("submit-button");
 
-if (form) {
-  form.addEventListener("submit", async function (event) {
-    event.preventDefault();
+    form.addEventListener("submit", async function (event) {
+      event.preventDefault();
 
-    const firstName = form.querySelector('[name="first_name"]')?.value.trim() || "";
-    const lastName = form.querySelector('[name="last_name"]')?.value.trim() || "";
-    const email = form.querySelector('[name="email"]')?.value.trim() || "";
-    const consentBox = form.querySelector('[name="consent"]');
+      const firstName =
+        form.querySelector('[name="first_name"]').value.trim();
+      const lastName =
+        form.querySelector('[name="last_name"]').value.trim();
+      const email =
+        form.querySelector('[name="email"]').value.trim();
+      const consentBox =
+        form.querySelector('[name="consent"]');
 
-    if (!firstName || !lastName || !email) {
-      alert("Please enter your first name, last name and email address.");
-      return;
-    }
-
-    if (!consentBox || !consentBox.checked) {
-      alert("Please tick the consent checkbox before submitting.");
-      return;
-    }
-
-    const button = form.querySelector('button[type="submit"], input[type="submit"]');
-    const oldText = button
-      ? (button.tagName === "INPUT" ? button.value : button.textContent)
-      : "";
-
-    if (button) {
-      button.disabled = true;
-      if (button.tagName === "INPUT") {
-        button.value = "Submitting...";
-      } else {
-        button.textContent = "Submitting...";
+      if (!firstName || !lastName || !email) {
+        statusMessage.textContent =
+          "Please enter your first name, last name and email address.";
+        return;
       }
-    }
 
-    try {
-      const params = new URLSearchParams();
-
-      new FormData(form).forEach((value, key) => {
-        params.append(key, value);
-      });
-
-      // Send consistent names to Apps Script.
-      params.set("first_name", firstName);
-      params.set("last_name", lastName);
-      params.set("email", email);
-      params.set("consent", "Yes");
-
-      await fetch(scriptURL, {
-        method: "POST",
-        mode: "no-cors",
-        body: params
-      });
-
-      alert("Your registration request has been sent. Please check with the event team if you need confirmation.");
-
-      form.reset();
-
-    } catch (error) {
-      alert("We could not send your registration. Please email sabbathinsongg@gmail.com.");
-      console.error(error);
-
-    } finally {
-      if (button) {
-        button.disabled = false;
-        if (button.tagName === "INPUT") {
-          button.value = oldText;
-        } else {
-          button.textContent = oldText;
-        }
+      if (!consentBox || !consentBox.checked) {
+        statusMessage.textContent =
+          "Please tick the consent checkbox before submitting.";
+        return;
       }
-    }
-  });
-}
-</script>
- 
 
+      submitButton.disabled = true;
+      submitButton.textContent = "Submitting...";
+      statusMessage.textContent = "";
+
+      try {
+        const params = new URLSearchParams();
+
+        new FormData(form).forEach(function (value, key) {
+          params.append(key, value);
+        });
+
+        params.set("first_name", firstName);
+        params.set("last_name", lastName);
+        params.set("email", email);
+        params.set("consent", "Yes");
+
+        await fetch(scriptURL, {
+          method: "POST",
+          mode: "no-cors",
+          body: params
+        });
+
+        statusMessage.textContent =
+          "Your request has been sent. Please check with the event team if you need confirmation.";
+
+        form.reset();
+      } catch (error) {
+        console.error("Registration error:", error);
+
+        statusMessage.textContent =
+          "We could not send your registration. Please email sabbathinsongg@gmail.com.";
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = "Submit Registration";
+      }
+    });
+  </script>
 </body>
 </html>
-
