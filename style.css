@@ -667,3 +667,139 @@ footer {
     gap: 12px;
   }
 }
+/* EVENT DETAILS SECTION */
+.event-details-section {
+  padding: 85px 7%;
+  background: #ffffff;
+}
+
+.event-details-inner {
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+.event-details-heading {
+  max-width: 700px;
+  text-align: center;
+  margin: 0 auto 42px;
+}
+
+.event-details-label {
+  display: inline-block;
+  color: #1268ad;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 12px;
+}
+
+.event-details-heading h2 {
+  color: #071f3b;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(40px, 5vw, 58px);
+  line-height: 1.1;
+  margin: 0 0 15px;
+}
+
+.event-details-heading > p {
+  color: #66788b;
+  font-size: 14px;
+  margin: 0;
+}
+
+.event-details-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.event-detail-card {
+  padding: 32px 24px;
+  text-align: center;
+  background: #f5faff;
+  border: 1px solid #dce7f0;
+  border-radius: 18px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.event-detail-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px #071f3b12;
+}
+
+.event-detail-icon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  background: #e4f2ff;
+  color: #1268ad;
+  font-size: 26px;
+}
+
+.event-detail-card h3 {
+  color: #071f3b;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 27px;
+  margin: 0 0 12px;
+}
+
+.event-detail-card p {
+  color: #66788b;
+  font-size: 13px;
+  margin: 5px 0;
+}
+
+.event-detail-card .event-detail-main {
+  color: #1268ad;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.event-detail-note {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 6px 12px;
+  border-radius: 30px;
+  background: #e4f2ff;
+  color: #1268ad;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.event-details-footer {
+  margin-top: 35px;
+  padding: 28px;
+  border-radius: 16px;
+  background: #071f3b;
+  text-align: center;
+}
+
+.event-details-footer p {
+  color: #9ddcff;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 27px;
+  margin: 0 0 18px;
+}
+
+.event-details-footer .btn {
+  display: inline-block;
+}
+
+@media (max-width: 800px) {
+  .event-details-section {
+    padding: 65px 6%;
+  }
+
+  .event-details-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .event-detail-card {
+    padding: 27px 20px;
+  }
+}
