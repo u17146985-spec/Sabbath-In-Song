@@ -803,3 +803,135 @@ footer {
     padding: 27px 20px;
   }
 }
+
+/* FEATURED ARTISTS SECTION */
+.featured-artists-section {
+  padding: 85px 6%;
+  background: linear-gradient(180deg, #f4f8fd, #ffffff);
+  text-align: center;
+}
+
+.featured-artists-inner {
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+.featured-artists-label {
+  display: inline-block;
+  margin-bottom: 14px;
+  color: #1268ad;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.featured-artists-inner h2 {
+  margin: 0 0 18px;
+  color: #071f3b;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(34px, 5vw, 48px);
+}
+
+.featured-artists-intro {
+  max-width: 650px;
+  margin: 0 auto 38px;
+  color: #607187;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.featured-artists-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin-bottom: 38px;
+}
+
+.featured-artist-card {
+  padding: 38px 22px;
+  background: #ffffff;
+  border: 1px solid #dce7f2;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(7, 31, 59, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.featured-artist-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 35px rgba(7, 31, 59, 0.12);
+}
+
+.featured-artist-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 22px;
+  color: #ffffff;
+  background: #071f3b;
+  border-radius: 50%;
+  font-size: 32px;
+}
+
+.featured-artist-card h3 {
+  margin: 0 0 10px;
+  color: #071f3b;
+  font-size: 18px;
+}
+
+.featured-artist-card p {
+  margin: 0;
+  color: #1268ad;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.featured-artists-inner .btn {
+  display: inline-block;
+  padding: 14px 28px;
+  color: #ffffff;
+  background: #071f3b;
+  border: 1px solid #071f3b;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.featured-artists-inner .btn:hover {
+  background: #1268ad;
+  border-color: #1268ad;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 800px) {
+  .featured-artists-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .featured-artist-card:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 520px) {
+  .featured-artists-section {
+    padding: 60px 5%;
+  }
+
+  .featured-artists-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .featured-artist-card:last-child {
+    grid-column: auto;
+  }
+
+  .featured-artist-card {
+    padding: 30px 18px;
+  }
+}
